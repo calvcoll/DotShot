@@ -1,0 +1,24 @@
+C:\Users\Calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\Bin\Debug\DotShot.dll
+C:\Users\Calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\Bin\Debug\DotShot.pdb
+C:\Users\Calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\Bin\Debug\AppManifest.xaml
+C:\Users\Calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\Bin\Debug\UntitledGame1TestPage.html
+C:\Users\Calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\obj\Debug\App.g.cs
+C:\Users\Calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\obj\Debug\MainPage.g.cs
+C:\Users\Calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\obj\Debug\DotShot.g.resources
+C:\Users\Calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\obj\Debug\DotShot.dll
+C:\Users\Calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\obj\Debug\DotShot.pdb
+C:\Users\Calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\obj\Debug\XapCacheFile.xml
+C:\Users\Calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\Bin\Debug\DotShot.xap
+C:\Users\Calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\obj\Debug\DotShot.csprojResolveAssemblyReference.cache
+C:\Users\Calv\Documents\Visual Studio 2012\Projects\DotShot -old\UntitledGame1\Bin\Debug\DotShot.dll
+C:\Users\Calv\Documents\Visual Studio 2012\Projects\DotShot -old\UntitledGame1\Bin\Debug\DotShot.pdb
+C:\Users\Calv\Documents\Visual Studio 2012\Projects\DotShot -old\UntitledGame1\Bin\Debug\AppManifest.xaml
+C:\Users\Calv\Documents\Visual Studio 2012\Projects\DotShot -old\UntitledGame1\Bin\Debug\DotShot.xap
+C:\Users\Calv\Documents\Visual Studio 2012\Projects\DotShot -old\UntitledGame1\Bin\Debug\UntitledGame1TestPage.html
+C:\Users\Calv\Documents\Visual Studio 2012\Projects\DotShot -old\UntitledGame1\obj\Debug\DotShot.csprojResolveAssemblyReference.cache
+C:\Users\Calv\Documents\Visual Studio 2012\Projects\DotShot -old\UntitledGame1\obj\Debug\App.g.cs
+C:\Users\Calv\Documents\Visual Studio 2012\Projects\DotShot -old\UntitledGame1\obj\Debug\MainPage.g.cs
+C:\Users\Calv\Documents\Visual Studio 2012\Projects\DotShot -old\UntitledGame1\obj\Debug\DotShot.g.resources
+C:\Users\Calv\Documents\Visual Studio 2012\Projects\DotShot -old\UntitledGame1\obj\Debug\DotShot.dll
+C:\Users\Calv\Documents\Visual Studio 2012\Projects\DotShot -old\UntitledGame1\obj\Debug\DotShot.pdb
+C:\Users\Calv\Documents\Visual Studio 2012\Projects\DotShot -old\UntitledGame1\obj\Debug\XapCacheFile.xml

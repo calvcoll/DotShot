@@ -1,0 +1,7 @@
+<OutOfBrowserSettings ShortName="DotShot" EnableGPUAcceleration="True" ShowInstallMenuItem="False">
+  <OutOfBrowserSettings.Blurb>DotShot the quick zombie escape game!</OutOfBrowserSettings.Blurb>
+  <OutOfBrowserSettings.WindowSettings>
+    <WindowSettings Title="DotShot" />
+  </OutOfBrowserSettings.WindowSettings>
+  <OutOfBrowserSettings.Icons />
+</OutOfBrowserSettings>

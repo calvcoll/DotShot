@@ -1,0 +1,12 @@
+c:\users\calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\obj\Debug\UntitledGame1.csprojResolveAssemblyReference.cache
+c:\users\calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\obj\Debug\App.g.cs
+c:\users\calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\obj\Debug\MainPage.g.cs
+c:\users\calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\obj\Debug\UntitledGame1.g.resources
+c:\users\calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\Bin\Debug\UntitledGame1.dll
+c:\users\calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\Bin\Debug\UntitledGame1.pdb
+c:\users\calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\Bin\Debug\AppManifest.xaml
+c:\users\calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\Bin\Debug\UntitledGame1.xap
+c:\users\calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\Bin\Debug\UntitledGame1TestPage.html
+c:\users\calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\obj\Debug\UntitledGame1.dll
+c:\users\calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\obj\Debug\UntitledGame1.pdb
+c:\users\calv\documents\visual studio 2012\Projects\UntitledGame1\UntitledGame1\obj\Debug\XapCacheFile.xml
