@@ -46,13 +46,9 @@ namespace DotShot
             InitializeComponent();
 
             browser = Application.Current.Host;
-            try
+            if (Application.Current.IsRunningOutOfBrowser)
             {
                 Application.Current.MainWindow.Title = "DotShot - Wild Framerate Heaven.";
-            }
-            catch (NotSupportedException nse)
-            {
-                System.Diagnostics.Debug.WriteLine("Not supported (this is a non-browser option). \n" + nse.StackTrace);
             }
             browser.Settings.EnableFrameRateCounter = true;
             browser.Settings.MaxFrameRate = 60;
