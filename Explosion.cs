@@ -17,41 +17,41 @@ namespace DotShot
 
         public Explosion(Canvas _canvas)
         {
-            this.posX = maths.GetRandInt(0, (int) _canvas.Width);
-            this.posY = maths.GetRandInt(0, (int) _canvas.Height);
-            this.width = 10;
-            this.height = 10;
+            this.PosX = maths.GetRandInt(0, (int) _canvas.Width);
+            this.PosY = maths.GetRandInt(0, (int) _canvas.Height);
+            this.Width = 10;
+            this.Height = 10;
             this.canvas = _canvas;
             renderExplosion();
         }
 
         private void renderExplosion()
         {
-            this.sprite = new Ellipse();
+            this.Sprite = new Ellipse();
 
-            this.sprite.Height = this.height;
-            this.sprite.Width = this.width;
+            this.Sprite.Height = this.Height;
+            this.Sprite.Width = this.Width;
 
-            this.sprite.Fill = new SolidColorBrush(Colors.Yellow);
-            this.sprite.Fill.Opacity = 1;
+            this.Sprite.Fill = new SolidColorBrush(Colors.Yellow);
+            this.Sprite.Fill.Opacity = 1;
 
-            this.sprite.SetValue(Canvas.LeftProperty, (double)posX);
-            this.sprite.SetValue(Canvas.TopProperty, (double)posY);
-            canvas.Children.Add(this.sprite);
+            this.Sprite.SetValue(Canvas.LeftProperty, (double)PosX);
+            this.Sprite.SetValue(Canvas.TopProperty, (double)PosY);
+            canvas.Children.Add(this.Sprite);
         }
 
         public void explode()
         {
-            canvas.Children.Remove(this.sprite);
-            if (this.sprite.Height > 40)
+            canvas.Children.Remove(this.Sprite);
+            if (this.Sprite.Height > 40)
             {
                 this.expand = false;
                 this.setDead();
             }
             if (this.expand)
             {
-                this.sprite.Height += 5;
-                this.sprite.Width += 5;
+                this.Sprite.Height += 5;
+                this.Sprite.Width += 5;
             }
             renderExplosion();
         }

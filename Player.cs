@@ -16,11 +16,11 @@ namespace DotShot
 
         public Player(int _posX, int _posY, Canvas _canvas)
         {
-            this.posX = _posX;
-            this.posY = _posY;
+            this.PosX = _posX;
+            this.PosY = _posY;
             this.Move = true;
-            this.width = 12;
-            this.height = 12;
+            this.Width = 12;
+            this.Height = 12;
             this.health = 20;
             this.canvas = _canvas;
             this.renderSprite();
@@ -28,22 +28,22 @@ namespace DotShot
 
         protected new void renderSprite()
         {
-            this.sprite = new Ellipse();
+            this.Sprite = new Ellipse();
 
-            this.sprite.Height = this.height;
-            this.sprite.Width = this.width;
+            this.Sprite.Height = this.Height;
+            this.Sprite.Width = this.Width;
 
-            this.sprite.Fill = new SolidColorBrush(Colors.Magenta);
-            this.sprite.Fill.Opacity = 1;
+            this.Sprite.Fill = new SolidColorBrush(Colors.Magenta);
+            this.Sprite.Fill.Opacity = 1;
 
-            this.sprite.SetValue(Canvas.LeftProperty, (double)posX);
-            this.sprite.SetValue(Canvas.TopProperty, (double)posY);
-            canvas.Children.Add(this.sprite);
+            this.Sprite.SetValue(Canvas.LeftProperty, (double)PosX);
+            this.Sprite.SetValue(Canvas.TopProperty, (double)PosY);
+            canvas.Children.Add(this.Sprite);
         }
 
         public Boolean isPlayerDead()
         {
-            return this.isDead;
+            return this.IsDead;
         }
 
         public void checkCollisions(Entity entity)

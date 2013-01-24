@@ -16,10 +16,10 @@ namespace DotShot
 
         public Wall(Canvas _canvas)
         {
-            this.posX = maths.GetRandInt(0, (int)_canvas.Width - 5);
-            this.posY = maths.GetRandInt(0, (int)_canvas.Height - 5);
-            this.width = 12;
-            this.height = 12;
+            this.PosX = maths.GetRandInt(0, (int)_canvas.Width - 5);
+            this.PosY = maths.GetRandInt(0, (int)_canvas.Height - 5);
+            this.Width = 12;
+            this.Height = 12;
             this.health = 20;
             this.canvas = _canvas;
             this.renderSprite();
@@ -27,17 +27,17 @@ namespace DotShot
 
         protected new void renderSprite()
         {
-            this.sprite = new Ellipse();
+            this.Sprite = new Ellipse();
 
-            this.sprite.Height = this.height;
-            this.sprite.Width = this.width;
+            this.Sprite.Height = this.Height;
+            this.Sprite.Width = this.Width;
 
-            this.sprite.Fill = new SolidColorBrush(Colors.Brown);
-            this.sprite.Fill.Opacity = 1;
+            this.Sprite.Fill = new SolidColorBrush(Colors.Brown);
+            this.Sprite.Fill.Opacity = 1;
 
-            this.sprite.SetValue(Canvas.LeftProperty, (double)posX);
-            this.sprite.SetValue(Canvas.TopProperty, (double)posY);
-            canvas.Children.Add(this.sprite);
+            this.Sprite.SetValue(Canvas.LeftProperty, (double)PosX);
+            this.Sprite.SetValue(Canvas.TopProperty, (double)PosY);
+            canvas.Children.Add(this.Sprite);
         }
 
         public void checkCollisions(Entity entity)

@@ -13,33 +13,33 @@ namespace DotShot
 {
     public class Entity
     {
-        protected int posX;
-        protected int posY;
-        protected int width {get; set;}
-        protected int height {get; set;}
+        protected int PosX;
+        protected int PosY;
+        protected int Width {get; set;}
+        protected int Height {get; set;}
         protected Canvas canvas;
-        protected Boolean isDead = false;
-        public bool hasCollided = false;
+        protected Boolean IsDead = false;
+        public bool HasCollided = false;
 
         protected MathHelper maths = new MathHelper();
 
-        protected Ellipse sprite;
+        protected Ellipse Sprite;
 
         private bool move;
         public bool Move { get { return this.move; } set { this.move = value; } }
 
         public bool collidesWith(Entity entity)
         {
-            int x1 = this.posX;
-            int y1 = this.posY;
-            int w1 = this.width;
-            int h1 = this.height;
+            int x1 = this.PosX;
+            int y1 = this.PosY;
+            int w1 = this.Width;
+            int h1 = this.Height;
             Rect box1 = new Rect(x1, y1, w1, h1);
 
-            int x2 = entity.posX;
-            int y2 = entity.posY;
-            int w2 = entity.width;
-            int h2 = entity.height;
+            int x2 = entity.PosX;
+            int y2 = entity.PosY;
+            int w2 = entity.Width;
+            int h2 = entity.Height;
             Rect box2 = new Rect(x2, y2, w2, h2);
 
             box1.Intersect(box2);
@@ -57,7 +57,7 @@ namespace DotShot
        {
            if (isCoords)
            {
-               if (_posX > (this.canvas.Width - this.width) || _posY > (this.canvas.Height - this.height) || _posX < 0 || _posY < 0)
+               if (_posX > (this.canvas.Width - this.Width) || _posY > (this.canvas.Height - this.Height) || _posX < 0 || _posY < 0)
                {
                    return true;
                }
@@ -68,9 +68,9 @@ namespace DotShot
            }
            else
            {
-               _posX += this.posX;
-               _posY += this.posY;
-               if (_posX > (this.canvas.Width - this.width) || _posY > (this.canvas.Height - this.height) || _posX < 0 || _posY < 0)
+               _posX += this.PosX;
+               _posY += this.PosY;
+               if (_posX > (this.canvas.Width - this.Width) || _posY > (this.canvas.Height - this.Height) || _posX < 0 || _posY < 0)
                {
                    return true;
                }
@@ -86,8 +86,8 @@ namespace DotShot
        {
            if (!OutOfBounds(_posX, _posY) && this.Move)
            {
-               this.posX += _posX;
-               this.posY += _posY;
+               this.PosX += _posX;
+               this.PosY += _posY;
                this.onSpriteMove();
                this.Move = true;
            }
@@ -97,8 +97,8 @@ namespace DotShot
        {
            if (!OutOfBounds(_posX, _posY))
            {
-               this.posX = _posX;
-               this.posY = _posY;
+               this.PosX = _posX;
+               this.PosY = _posY;
                this.onSpriteMove();
                this.Move = true;
            }
@@ -106,42 +106,42 @@ namespace DotShot
 
        protected void onSpriteMove()
        {
-           this.canvas.Children.Remove(sprite);
-           this.sprite.SetValue(Canvas.LeftProperty, (double)posX);
-           this.sprite.SetValue(Canvas.TopProperty, (double)posY);
-           this.canvas.Children.Add(sprite);
+           this.canvas.Children.Remove(Sprite);
+           this.Sprite.SetValue(Canvas.LeftProperty, (double)PosX);
+           this.Sprite.SetValue(Canvas.TopProperty, (double)PosY);
+           this.canvas.Children.Add(Sprite);
            //this.renderSprite();
        }
 
        protected void renderSprite()
        {
-           this.sprite = new Ellipse();
+           this.Sprite = new Ellipse();
 
-           this.sprite.Height = this.height;
-           this.sprite.Width = this.width;
+           this.Sprite.Height = this.Height;
+           this.Sprite.Width = this.Width;
 
-           this.sprite.Fill = new SolidColorBrush(Colors.Magenta);
-           this.sprite.Fill.Opacity = 1;
+           this.Sprite.Fill = new SolidColorBrush(Colors.Magenta);
+           this.Sprite.Fill.Opacity = 1;
 
-           this.sprite.SetValue(Canvas.LeftProperty, (double)posX);
-           this.sprite.SetValue(Canvas.TopProperty, (double)posY);
-           this.canvas.Children.Add(sprite);
+           this.Sprite.SetValue(Canvas.LeftProperty, (double)PosX);
+           this.Sprite.SetValue(Canvas.TopProperty, (double)PosY);
+           this.canvas.Children.Add(Sprite);
        }
 
        public Point getPosition()
        {
-           return new Point(this.posX, this.posY);
+           return new Point(this.PosX, this.PosY);
        }
 
        public void setDead()
        {
-           this.isDead = true;
+           this.IsDead = true;
            this.onDeath();
        }
 
        protected void onDeath()
        {
-            this.canvas.Children.Remove(sprite);
+            this.canvas.Children.Remove(Sprite);
        }
     }
 }

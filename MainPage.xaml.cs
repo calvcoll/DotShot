@@ -33,25 +33,25 @@ namespace DotShot
         private MathHelper maths = new MathHelper();
         private Player player;
 
-        TextBox deathMessageBox = new TextBox();
-        TextBox scoreBox = new TextBox();
-        TextBox healthBox = new TextBox();
+        TextBox DeathMessageBox = new TextBox();
+        TextBox ScoreBox = new TextBox();
+        TextBox HealthBox = new TextBox();
 
         private int score = 0;
 
-        private SilverlightHost browser;
+        private SilverlightHost Host;
 
         public MainPage()
         {
             InitializeComponent();
 
-            browser = Application.Current.Host;
+            Host = Application.Current.Host;
             if (Application.Current.IsRunningOutOfBrowser)
             {
                 Application.Current.MainWindow.Title = "DotShot - Wild Framerate Heaven.";
             }
-            browser.Settings.EnableFrameRateCounter = true;
-            browser.Settings.MaxFrameRate = 60;
+            Host.Settings.EnableFrameRateCounter = true;
+            Host.Settings.MaxFrameRate = 60;
 
             this.KeyDown += new KeyEventHandler(Page_KeyDown);
             this.KeyUp += new KeyEventHandler(Page_KeyUp);
@@ -80,26 +80,26 @@ namespace DotShot
 
         private void generateTextBoxes()
         {
-            scoreBox.IsEnabled = false;
-            scoreBox.Height = 25;
-            scoreBox.Width = 100;
-            scoreBox.SetValue(Canvas.LeftProperty, (double) 0);
-            scoreBox.SetValue(Canvas.TopProperty, (double) 0);
-            scoreBox.Text = score.ToString();
+            ScoreBox.IsEnabled = false;
+            ScoreBox.Height = 25;
+            ScoreBox.Width = 100;
+            ScoreBox.SetValue(Canvas.LeftProperty, (double) 0);
+            ScoreBox.SetValue(Canvas.TopProperty, (double) 0);
+            ScoreBox.Text = score.ToString();
 
-            healthBox.IsEnabled = false;
-            healthBox.Height = 25;
-            healthBox.Width = 100;
-            healthBox.SetValue(Canvas.LeftProperty, gameMain.Width - 100);
-            healthBox.SetValue(Canvas.TopProperty, (double) 0);
-            healthBox.Text = player.getHealth().ToString();
+            HealthBox.IsEnabled = false;
+            HealthBox.Height = 25;
+            HealthBox.Width = 100;
+            HealthBox.SetValue(Canvas.LeftProperty, gameMain.Width - 100);
+            HealthBox.SetValue(Canvas.TopProperty, (double) 0);
+            HealthBox.Text = player.getHealth().ToString();
 
-            deathMessageBox.IsEnabled = false;
-            deathMessageBox.Height = 25;
-            deathMessageBox.Width = 110;
-            deathMessageBox.SetValue(Canvas.LeftProperty, gameMain.Width / 2 - (deathMessageBox.Width / 2));
-            deathMessageBox.SetValue(Canvas.TopProperty, gameMain.Height / 2 - (deathMessageBox.Height /2));
-            deathMessageBox.Text = "You died. How sad.";
+            DeathMessageBox.IsEnabled = false;
+            DeathMessageBox.Height = 25;
+            DeathMessageBox.Width = 110;
+            DeathMessageBox.SetValue(Canvas.LeftProperty, gameMain.Width / 2 - (DeathMessageBox.Width / 2));
+            DeathMessageBox.SetValue(Canvas.TopProperty, gameMain.Height / 2 - (DeathMessageBox.Height /2));
+            DeathMessageBox.Text = "You died. How sad.";
         }
 
         private void GenerateEnemies(int enemies)
@@ -202,7 +202,7 @@ namespace DotShot
                 displayDeathMessage();
                 if (this.restartPressed)
                 {
-                    gameMain.Children.Remove(deathMessageBox);
+                    gameMain.Children.Remove(DeathMessageBox);
                     score = 0;
                     dt.Stop();
                     startGame();
@@ -212,30 +212,30 @@ namespace DotShot
 
         private void updateScore()
         {
-            gameMain.Children.Remove(scoreBox);
+            gameMain.Children.Remove(ScoreBox);
             score++;
-            scoreBox.Text = score.ToString();
-            gameMain.Children.Add(scoreBox);
+            ScoreBox.Text = score.ToString();
+            gameMain.Children.Add(ScoreBox);
         }
 
         private void updateHealth()
         {
             if (player != null)
             {
-                gameMain.Children.Remove(healthBox);
-                healthBox.Text = player.getHealth().ToString();
-                gameMain.Children.Add(healthBox);
+                gameMain.Children.Remove(HealthBox);
+                HealthBox.Text = player.getHealth().ToString();
+                gameMain.Children.Add(HealthBox);
             }
         }
 
         private void displayDeathMessage()
         {
             //This prevents the game from trying to add the object twice, after the first iteration.
-            gameMain.Children.Remove(healthBox);
-            healthBox.Text = "0";
-            gameMain.Children.Add(healthBox);
-            gameMain.Children.Remove(deathMessageBox);
-            gameMain.Children.Add(deathMessageBox);
+            gameMain.Children.Remove(HealthBox);
+            HealthBox.Text = "0";
+            gameMain.Children.Add(HealthBox);
+            gameMain.Children.Remove(DeathMessageBox);
+            gameMain.Children.Add(DeathMessageBox);
         }
 
         private void cleanupEntities()
@@ -284,13 +284,13 @@ namespace DotShot
                     //add a foreach loop identical to above checking for collisions then move away from that enemy
                     int x = (int)enemy.getPosition().X;
                     int y = (int)enemy.getPosition().Y;
-                    enemy.hasCollided = false;
+                    enemy.HasCollided = false;
                     foreach (Entity entity2 in entityList)
                     {
                         if (entity2 is Enemy)
                         {
                             Enemy enemy2 = (Enemy)entity2;
-                            enemy2.hasCollided = false;
+                            enemy2.HasCollided = false;
                             if (enemy != enemy2)
                             {
                                 if (enemy.collidesWith(enemy2))
@@ -298,12 +298,12 @@ namespace DotShot
                                     enemy.moveSprite(3, 3);
                                     enemy2.moveSprite(-3, -3);
 
-                                    enemy.hasCollided = true;
+                                    enemy.HasCollided = true;
                                 }
                             }
                         }
                     }
-                    if (!enemy.hasCollided)
+                    if (!enemy.HasCollided)
                     {
                         if (x - player.getPosition().X > 0)
                         {
