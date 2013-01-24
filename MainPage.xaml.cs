@@ -17,7 +17,7 @@ namespace DotShot
     public partial class MainPage : UserControl
     {
         private List<Ellipse> backgroundSpriteList = new List<Ellipse>();
-        private List<Entity> entityList = new List<Entity>();
+        private List<Entity> EntityList = new List<Entity>();
 
         private Explosion explosion;
 
@@ -72,7 +72,7 @@ namespace DotShot
             GenerateWalls(10);
 
             player = new Player(200, 100, gameMain);
-            entityList.Add(player);
+            EntityList.Add(player);
 
             generateTextBoxes();
             dt.Start();
@@ -107,7 +107,7 @@ namespace DotShot
             for (int x = 0; x < enemies; x++)
             {
                 Enemy enemy = new Enemy(gameMain);
-                entityList.Add(enemy);
+                EntityList.Add(enemy);
             }
         }
 
@@ -116,7 +116,7 @@ namespace DotShot
             for (int x = 0; x < walls; x++)
             {
                 Wall wall = new Wall(gameMain);
-                entityList.Add(wall);
+                EntityList.Add(wall);
             }
         }
 
@@ -240,18 +240,18 @@ namespace DotShot
 
         private void cleanupEntities()
         {
-            for (int x = 0; x<entityList.Count;x++)
+            for (int x = 0; x<EntityList.Count;x++)
             {
-                Entity entity = entityList[x];
+                Entity entity = EntityList[x];
                 entity.setDead();
-                entityList.Remove(entity);
+                EntityList.Remove(entity);
             }
         }
 
         private void checkCollisions()
         {
             //Enemy collision code
-            foreach (Entity entity in entityList)
+            foreach (Entity entity in EntityList)
             {
                 if (player != null)
                 {
@@ -276,7 +276,7 @@ namespace DotShot
 
         private void enemyLogic()
         {
-            foreach (Entity entity in entityList)
+            foreach (Entity entity in EntityList)
             {
                 if (entity is Enemy)
                 {
@@ -285,7 +285,7 @@ namespace DotShot
                     int x = (int)enemy.getPosition().X;
                     int y = (int)enemy.getPosition().Y;
                     enemy.HasCollided = false;
-                    foreach (Entity entity2 in entityList)
+                    foreach (Entity entity2 in EntityList)
                     {
                         if (entity2 is Enemy)
                         {
