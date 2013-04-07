@@ -28,6 +28,21 @@ namespace DotShot
         private bool move;
         public bool Move { get { return this.move; } set { this.move = value; } }
 
+        protected void renderSprite(Color colour)
+        {
+            this.Sprite = new Ellipse();
+
+            this.Sprite.Height = this.Height;
+            this.Sprite.Width = this.Width;
+
+            this.Sprite.Fill = new SolidColorBrush(colour);
+            this.Sprite.Fill.Opacity = 1;
+
+            this.Sprite.SetValue(Canvas.LeftProperty, (double)PosX);
+            this.Sprite.SetValue(Canvas.TopProperty, (double)PosY);
+            canvas.Children.Add(this.Sprite);
+        }
+
         public bool collidesWith(Entity entity)
         {
             int x1 = this.PosX;

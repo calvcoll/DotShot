@@ -26,19 +26,9 @@ namespace DotShot
             this.renderSprite();
         }
 
-        protected new void renderSprite()
+        private new void renderSprite()
         {
-            this.Sprite = new Ellipse();
-
-            this.Sprite.Height = this.Height;
-            this.Sprite.Width = this.Width;
-
-            this.Sprite.Fill = new SolidColorBrush(Colors.Magenta);
-            this.Sprite.Fill.Opacity = 1;
-
-            this.Sprite.SetValue(Canvas.LeftProperty, (double)PosX);
-            this.Sprite.SetValue(Canvas.TopProperty, (double)PosY);
-            canvas.Children.Add(this.Sprite);
+            base.renderSprite(Colors.Magenta);
         }
 
         public Boolean isPlayerDead()
@@ -51,6 +41,11 @@ namespace DotShot
             if (this.collidesWith(entity) && entity is Enemy)
             {
                 this.dealDamage(1);
+            }
+
+            if (this.collidesWith(entity) && entity is Wall)
+            {
+                this.IsDead = true;
             }
         }
     }
